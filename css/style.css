@@ -400,9 +400,6 @@ code {
   left: 0;
   margin-top: -20px;
 }
-.header-sub {
-  border-top: 1px solid #eceff2;
-}
 .header-sub ul {
   margin: 0 15px;
 }
@@ -501,6 +498,7 @@ code {
   width: 40px;
   height: 40px;
   margin-right: 8px;
+  border-radius: 50%;
 }
 #sub-nav #profile-nav .fa {
   line-height: 40px;
@@ -569,7 +567,7 @@ code {
   outline: none !important;
   background: none !important;
   font: 14px "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
-  border: 1px solid #eceff2 !important;
+  border: 1px solid none !important;
 }
 .search-form-input:focus,
 .search-form-input.ins-search-input:focus,
@@ -603,7 +601,7 @@ code {
 #main-nav-mobile .menu:after {
   clear: both;
 }
-#main-nav-mobile .menu .search-form-input {
+#main-nav-mobile .menu .search-form {
   display: none;
   padding: 0 10px;
   margin-right: 15px;
@@ -611,13 +609,18 @@ code {
   line-height: 32px;
   border-radius: 16px;
 }
-@media screen and (max-width: 559px) {
-  #main-nav-mobile .menu .search-form-input {
-    display: block;
+@media screen and (min-width: 800px) and (max-width: 1199px) {
+  #main-nav-mobile .menu .search-form {
+    display: none;
   }
 }
-#main-nav-mobile .menu .search-form-input::-webkit-search-results-decoration,
-#main-nav-mobile .menu .search-form-input::-webkit-search-cancel-button {
+@media screen and (min-width: 1200px) {
+  #main-nav-mobile .menu .search-form {
+    display: none;
+  }
+}
+#main-nav-mobile .menu .search-form::-webkit-search-results-decoration,
+#main-nav-mobile .menu .search-form::-webkit-search-cancel-button {
   -webkit-appearance: none;
 }
 .bio {
