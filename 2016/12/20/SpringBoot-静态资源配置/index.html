@@ -3,30 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>陈志豪 | Johnny.z.h.Chen — blog</title>
+    <title>SpringBoot 静态资源配置 | Johnny.z.h.Chen — blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="一个穿着白大褂，左手拿听筒，右手拿鼠标的程序员
-笔者毕业于广西医科大学。是一个热爱技术、热爱生活的医学程序员，目前就职于汇丰银行，从事于Java Web 的开发，以及少许的前端开发。现阶段主要研究SpringCloud套件以及系统架构相关技术
-
-一个热爱生活、热爱大自然的程序猿
-笔者是一只很幸运的猿。很早就被驯化，所以在猿的道路上并没有走多远。她的出现，改变了我猿的一切  ———— 计算机与陈程">
-<meta property="og:type" content="website">
-<meta property="og:title" content="陈志豪">
-<meta property="og:url" content="https://daisyhao.github.io/about/index.html">
+    <meta name="description" content="Spring Boot 默认为我们提供了静态资源处理，使用WebMvcAutoConfiguration 中的配置各种属性。建议大家使用Spring Boot的默认配置方式，如果需要特殊处理的再通过配置进行修改。如果想要自己完全控制WebMVC，就需要在@Configuration注解的配置类上增加">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot 静态资源配置">
+<meta property="og:url" content="https://daisyhao.github.io/2016/12/20/SpringBoot-静态资源配置/index.html">
 <meta property="og:site_name" content="Johnny.z.h.Chen — blog">
-<meta property="og:description" content="一个穿着白大褂，左手拿听筒，右手拿鼠标的程序员
-笔者毕业于广西医科大学。是一个热爱技术、热爱生活的医学程序员，目前就职于汇丰银行，从事于Java Web 的开发，以及少许的前端开发。现阶段主要研究SpringCloud套件以及系统架构相关技术
-
-一个热爱生活、热爱大自然的程序猿
-笔者是一只很幸运的猿。很早就被驯化，所以在猿的道路上并没有走多远。她的出现，改变了我猿的一切  ———— 计算机与陈程">
-<meta property="og:updated_time" content="2016-12-25T07:10:54.116Z">
+<meta property="og:description" content="Spring Boot 默认为我们提供了静态资源处理，使用WebMvcAutoConfiguration 中的配置各种属性。建议大家使用Spring Boot的默认配置方式，如果需要特殊处理的再通过配置进行修改。如果想要自己完全控制WebMVC，就需要在@Configuration注解的配置类上增加">
+<meta property="og:image" content="https://daisyhao.github.io/gallery/springboot.png">
+<meta property="og:updated_time" content="2016-12-26T05:21:40.073Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="陈志豪">
-<meta name="twitter:description" content="一个穿着白大褂，左手拿听筒，右手拿鼠标的程序员
-笔者毕业于广西医科大学。是一个热爱技术、热爱生活的医学程序员，目前就职于汇丰银行，从事于Java Web 的开发，以及少许的前端开发。现阶段主要研究SpringCloud套件以及系统架构相关技术
-
-一个热爱生活、热爱大自然的程序猿
-笔者是一只很幸运的猿。很早就被驯化，所以在猿的道路上并没有走多远。她的出现，改变了我猿的一切  ———— 计算机与陈程">
+<meta name="twitter:title" content="SpringBoot 静态资源配置">
+<meta name="twitter:description" content="Spring Boot 默认为我们提供了静态资源处理，使用WebMvcAutoConfiguration 中的配置各种属性。建议大家使用Spring Boot的默认配置方式，如果需要特殊处理的再通过配置进行修改。如果想要自己完全控制WebMVC，就需要在@Configuration注解的配置类上增加">
+<meta name="twitter:image" content="https://daisyhao.github.io/gallery/springboot.png">
     
 
     
@@ -192,7 +182,7 @@
 </aside>
 
             
-            <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-SpringBoot-静态资源配置" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -200,10 +190,34 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            陈志豪
+            SpringBoot 静态资源配置
         </h1>
     
 
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/12/20/SpringBoot-静态资源配置/">
+            <time datetime="2016-12-20T04:43:18.000Z" itemprop="datePublished">2016-12-20</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/SpringBoot/">SpringBoot</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Resouce/">Resouce</a>, <a class="tag-link" href="/tags/SpringBoot/">SpringBoot</a>
+    </div>
+
+                    </div>
                 
             </header>
         
@@ -211,16 +225,22 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <blockquote>
-<h3 id="一个穿着白大褂，左手拿听筒，右手拿鼠标的程序员"><a href="#一个穿着白大褂，左手拿听筒，右手拿鼠标的程序员" class="headerlink" title="一个穿着白大褂，左手拿听筒，右手拿鼠标的程序员"></a>一个穿着白大褂，左手拿听筒，右手拿鼠标的程序员</h3></blockquote>
-<p>笔者毕业于广西医科大学。是一个热爱技术、热爱生活的医学程序员，目前就职于汇丰银行，从事于Java Web 的开发，以及少许的前端开发。现阶段主要研究SpringCloud套件以及系统架构相关技术</p>
-<blockquote>
-<h3 id="一个热爱生活、热爱大自然的程序猿"><a href="#一个热爱生活、热爱大自然的程序猿" class="headerlink" title="一个热爱生活、热爱大自然的程序猿"></a>一个热爱生活、热爱大自然的程序猿</h3></blockquote>
-<p>笔者是一只很幸运的猿。很早就被驯化，所以在猿的道路上并没有走多远。她的出现，改变了我猿的一切  ———— 计算机与陈程序猿</p>
+            <p>Spring Boot 默认为我们提供了静态资源处理，使用WebMvcAutoConfiguration 中的配置各种属性。建议大家使用Spring Boot的默认配置方式，如果需要特殊处理的再通过配置进行修改。如果想要自己完全控制WebMVC，就需要在@Configuration注解的配置类上增加<a id="more"></a>@EnableWebMvc（@SpringBootApplication 注解的程序入口类已经包含@Configuration），增加该注解以后WebMvcAutoConfiguration中配置就不会生效，你需要自己来配置需要的每一项。这种情况下的配置还是要多看一下WebMvcAutoConfiguration类。我们既然是快速使用Spring Boot，并不想过多的自己再重新配置。本文还是主要针对Spring Boot的默认处理方式，部分配置在application 配置文件中（.properties 或 .yml）</p>
+<h2 id="默认配置"><a href="#默认配置" class="headerlink" title="默认配置"></a>默认配置</h2><p>我们在启动应用的时候，可以在控制台中看到如下信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">2016-12-26 12:58:34.491  INFO 37508 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of <span class="built_in">type</span> [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]</div><div class="line">2016-12-26 12:58:34.492  INFO 37508 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of <span class="built_in">type</span> [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]</div></pre></td></tr></table></figure></p>
+<p>其中默认配置的 /**映射到 /static （或/public、/resources、/META-INF/resources）<br>其中默认配置的 /webjars/** 映射到 classpath:/META-INF/resources/webjars/<br>PS：上面的 static、public、resources 等目录都在 classpath: 下面（如 src/main/resources/static）。优先级顺序为：META/resources &gt; resources &gt; static &gt; public </p>
+<h2 id="自定义资源映射"><a href="#自定义资源映射" class="headerlink" title="自定义资源映射"></a>自定义资源映射</h2><p>实现类继承 WebMvcConfigurerAdapter 并重写方法 addResourceHandlers (以增加 /js/* 映射到 classpath:/js/* 为例的代码处理为： )</p>
+<h3 id="通过继承-WebMvcConfigurerAdapter"><a href="#通过继承-WebMvcConfigurerAdapter" class="headerlink" title="通过继承 WebMvcConfigurerAdapter"></a>通过继承 WebMvcConfigurerAdapter</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">import org.springboot.sample.interceptor.MyInterceptor1;</div><div class="line">import org.springboot.sample.interceptor.MyInterceptor2;</div><div class="line">import org.springframework.context.annotation.Configuration;</div><div class="line">import org.springframework.web.servlet.config.annotation.InterceptorRegistry;</div><div class="line">import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;</div><div class="line">import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;</div><div class="line"></div><div class="line">@Configuration</div><div class="line">public class MyWebAppConfigurer </div><div class="line">        extends WebMvcConfigurerAdapter &#123;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void addResourceHandlers(ResourceHandlerRegistry registry) &#123;</div><div class="line">        registry.addResourceHandler(<span class="string">"/js/**"</span>).addResourceLocations(<span class="string">"classpath:/jsj/"</span>);</div><div class="line">        super.addResourceHandlers(registry);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="通过配置文件"><a href="#通过配置文件" class="headerlink" title="通过配置文件"></a>通过配置文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 默认值为 /**</span></div><div class="line">spring.mvc.static-path-pattern=</div><div class="line"><span class="comment"># 默认值为 classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/ </span></div><div class="line">spring.resources.static-locations=spring.resources.static-locations = classpath:page/ 这里设置要指向的路径，多个使用英文逗号隔开，</div></pre></td></tr></table></figure>
+<p>使用 spring.mvc.static-path-pattern 可以重新定义pattern，如修改为 /myres/** ，则访问static 等目录下的fengjing.jpg文件应该为 <a href="http://localhost:8080/myres/fengjing.jpg" target="_blank" rel="external">http://localhost:8080/myres/fengjing.jpg</a> ，修改之前为 <a href="http://localhost:8080/fengjing.jpg" target="_blank" rel="external">http://localhost:8080/fengjing.jpg</a><br>使用 spring.resources.static-locations 可以重新定义 pattern 所指向的路径，支持 classpath: 和 file: （上面已经做过说明）<br>注意 spring.mvc.static-path-pattern 只可以定义一个，目前不支持多个逗号分割的方式。</p>
 
         
         </div>
         <footer class="article-footer">
+            
+                <div class="support-author">
+    <p class="support-talk" >如您觉得文章不错，对您有所帮助，可以通过“支付宝”或“微信支付”请我喝咖啡</p>
+    <div name="dashmain" id="dash-main-id-878e3a" class="dash-main-2 878e3a-2"></div>
+</div>
             
             <div class="share-container">
 
@@ -281,13 +301,23 @@
 
             
     
-        <a href="https://daisyhao.github.io/about/index.html#comments" class="article-comment-link ds-thread-count" data-thread-key="https://daisyhao.github.io/about/index.html">评论</a>
+        <a href="https://daisyhao.github.io/2016/12/20/SpringBoot-静态资源配置/#comments" class="article-comment-link ds-thread-count" data-thread-key="https://daisyhao.github.io/2016/12/20/SpringBoot-静态资源配置/">评论</a>
     
 
         </footer>
     </div>
     
         
+<nav id="article-nav">
+    
+    
+        <a href="/2016/12/18/First-Springboot-Application/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">第一个SpringBoot应用</div>
+        </a>
+    
+</nav>
+
 
     
 </article>
@@ -297,7 +327,7 @@
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="about/index.html" data-title="陈志豪" data-url="https://daisyhao.github.io/about/index.html"></div>
+    <div class="ds-thread" data-thread-key="2016/12/20/SpringBoot-静态资源配置/" data-title="SpringBoot 静态资源配置" data-url="https://daisyhao.github.io/2016/12/20/SpringBoot-静态资源配置/"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
