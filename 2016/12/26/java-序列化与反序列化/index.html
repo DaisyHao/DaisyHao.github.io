@@ -3,30 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>陈志豪 | Johnny.z.h.Chen — blog</title>
+    <title>java 序列化与反序列化 | Johnny.z.h.Chen — blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="一个穿着白大褂，左手拿听筒，右手拿鼠标的程序员
-笔者毕业于广西医科大学。是一个热爱技术、热爱生活的医学程序员，目前就职于汇丰银行，从事于Java Web 的开发，以及少许的前端开发。现阶段主要研究SpringCloud套件以及系统架构相关技术
-
-一个热爱生活、热爱大自然的程序猿
-笔者是一只很幸运的猿。很早就被驯化，所以在猿的道路上并没有走多远。她的出现，改变了我猿的一切  ———— 计算机与陈程">
-<meta property="og:type" content="website">
-<meta property="og:title" content="陈志豪">
-<meta property="og:url" content="https://daisyhao.github.io/about/index.html">
+    <meta name="description" content="Serialization简单说就是为了保存在内存中的各种对象的状态（也就是实例变量，不是方法），并且可以把保存的对象状态再读出来。虽然你可以用你自己的各种各样的方法来保存object states，但是Java给你提供一种应该比你自己好的保存对象状态的机制，那就是序列化。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java 序列化与反序列化">
+<meta property="og:url" content="https://daisyhao.github.io/2016/12/26/java-序列化与反序列化/index.html">
 <meta property="og:site_name" content="Johnny.z.h.Chen — blog">
-<meta property="og:description" content="一个穿着白大褂，左手拿听筒，右手拿鼠标的程序员
-笔者毕业于广西医科大学。是一个热爱技术、热爱生活的医学程序员，目前就职于汇丰银行，从事于Java Web 的开发，以及少许的前端开发。现阶段主要研究SpringCloud套件以及系统架构相关技术
-
-一个热爱生活、热爱大自然的程序猿
-笔者是一只很幸运的猿。很早就被驯化，所以在猿的道路上并没有走多远。她的出现，改变了我猿的一切  ———— 计算机与陈程">
-<meta property="og:updated_time" content="2016-12-25T07:10:54.116Z">
+<meta property="og:description" content="Serialization简单说就是为了保存在内存中的各种对象的状态（也就是实例变量，不是方法），并且可以把保存的对象状态再读出来。虽然你可以用你自己的各种各样的方法来保存object states，但是Java给你提供一种应该比你自己好的保存对象状态的机制，那就是序列化。">
+<meta property="og:image" content="https://daisyhao.github.io/gallery/java.jpg">
+<meta property="og:updated_time" content="2016-12-26T15:12:47.585Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="陈志豪">
-<meta name="twitter:description" content="一个穿着白大褂，左手拿听筒，右手拿鼠标的程序员
-笔者毕业于广西医科大学。是一个热爱技术、热爱生活的医学程序员，目前就职于汇丰银行，从事于Java Web 的开发，以及少许的前端开发。现阶段主要研究SpringCloud套件以及系统架构相关技术
-
-一个热爱生活、热爱大自然的程序猿
-笔者是一只很幸运的猿。很早就被驯化，所以在猿的道路上并没有走多远。她的出现，改变了我猿的一切  ———— 计算机与陈程">
+<meta name="twitter:title" content="java 序列化与反序列化">
+<meta name="twitter:description" content="Serialization简单说就是为了保存在内存中的各种对象的状态（也就是实例变量，不是方法），并且可以把保存的对象状态再读出来。虽然你可以用你自己的各种各样的方法来保存object states，但是Java给你提供一种应该比你自己好的保存对象状态的机制，那就是序列化。">
+<meta name="twitter:image" content="https://daisyhao.github.io/gallery/java.jpg">
     
 
     
@@ -192,7 +182,7 @@
 </aside>
 
             
-            <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-java-序列化与反序列化" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -200,10 +190,34 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            陈志豪
+            java 序列化与反序列化
         </h1>
     
 
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/12/26/java-序列化与反序列化/">
+            <time datetime="2016-12-26T14:55:00.000Z" itemprop="datePublished">2016-12-26</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Java-杂烩/">Java 杂烩</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/serialize/">serialize</a>
+    </div>
+
+                    </div>
                 
             </header>
         
@@ -211,16 +225,25 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <blockquote>
-<h3 id="一个穿着白大褂，左手拿听筒，右手拿鼠标的程序员"><a href="#一个穿着白大褂，左手拿听筒，右手拿鼠标的程序员" class="headerlink" title="一个穿着白大褂，左手拿听筒，右手拿鼠标的程序员"></a>一个穿着白大褂，左手拿听筒，右手拿鼠标的程序员</h3></blockquote>
-<p>笔者毕业于广西医科大学。是一个热爱技术、热爱生活的医学程序员，目前就职于汇丰银行，从事于Java Web 的开发，以及少许的前端开发。现阶段主要研究SpringCloud套件以及系统架构相关技术</p>
-<blockquote>
-<h3 id="一个热爱生活、热爱大自然的程序猿"><a href="#一个热爱生活、热爱大自然的程序猿" class="headerlink" title="一个热爱生活、热爱大自然的程序猿"></a>一个热爱生活、热爱大自然的程序猿</h3></blockquote>
-<p>笔者是一只很幸运的猿。很早就被驯化，所以在猿的道路上并没有走多远。她的出现，改变了我猿的一切  ———— 计算机与陈程序猿</p>
+            <p>Serialization简单说就是为了保存在内存中的各种对象的状态（也就是实例变量，不是方法），并且可以把保存的对象状态再读出来。虽然你可以用你自己的各种各样的方法来保存object states，但是Java给你提供一种应该比你自己好的保存对象状态的机制，那就是序列化。<br><a id="more"></a></p>
+<h3 id="什么是序列化和反序列化"><a href="#什么是序列化和反序列化" class="headerlink" title="什么是序列化和反序列化"></a>什么是序列化和反序列化</h3><p>Serialization（序列化）是一种将对象以一连串的字节描述的过程；<br>deserialization （反序列化）是一种将这些字节重建成一个对象的过程。</p>
+<h3 id="什么情况下需要序列化"><a href="#什么情况下需要序列化" class="headerlink" title="什么情况下需要序列化"></a>什么情况下需要序列化</h3><p>a）当你想把的内存中的对象保存到一个文件中或者数据库中时候；<br>b）当你想用套接字在网络上传送对象的时候；<br>c）当你想通过RMI传输对象的时候；</p>
+<h3 id="如何支持序列化"><a href="#如何支持序列化" class="headerlink" title="如何支持序列化"></a>如何支持序列化</h3><p>将需要序列化的类实现Serializable接口就可以了，Serializable接口中没有任何方法，可以理解为一个标记，即表明这个类可以序列化。</p>
+<h3 id="简单的序列化与反序列化"><a href="#简单的序列化与反序列化" class="headerlink" title="简单的序列化与反序列化"></a>简单的序列化与反序列化</h3><p>如果我们想要序列化一个对象，首先要创建某些OutputStream(如FileOutputStream、ByteArrayOutputStream等)，然后将这些OutputStream封装在一个ObjectOutputStream中。这时候，只需要调用writeObject()方法就可以将对象序列化，并将其发送给OutputStream（记住：对象的序列化是基于字节的，不能使用Reader和Writer等基于字符的层次结构）。而反序列的过程（即将一个序列还原成为一个对象），需要将一个InputStream(如FileInputstream、ByteArrayInputStream等)封装在ObjectInputStream内，然后调用readObject()即可。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">public class SerializeTest &#123;</div><div class="line">	</div><div class="line">	private User user;</div><div class="line">	</div><div class="line">	@Before</div><div class="line">	public void init()&#123;</div><div class="line">		user = new User();</div><div class="line">		user.setId(Long.valueOf(1012));</div><div class="line">		user.setName("johnny");</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	@Test</div><div class="line">	public void testSerialize() throws IllegalArgumentException, IOException, ClassNotFoundException&#123;</div><div class="line">		</div><div class="line">		ByteArrayOutputStream byteArray = new ByteArrayOutputStream(1024);</div><div class="line">		serialize(user, byteArray);</div><div class="line">			</div><div class="line">		for(byte lin:byteArray.toByteArray())&#123;</div><div class="line">			System.out.print(lin);</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		User target = (User)deserialize(byteArray.toByteArray());</div><div class="line">		System.out.println("deserialize: " + target.getId() + ": " + target.getName());</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	private Object deserialize(byte[] source) throws IOException, ClassNotFoundException&#123;</div><div class="line">		if(source != null)&#123;</div><div class="line">			ByteArrayInputStream byteStream = new ByteArrayInputStream(source);</div><div class="line">			ObjectInputStream objectInputStream = new ObjectInputStream(byteStream);</div><div class="line">			return objectInputStream.readObject();</div><div class="line">		&#125;</div><div class="line">		return null;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	private void serialize(Object source,OutputStream target) throws IllegalArgumentException, IOException&#123;</div><div class="line">		if(!(source instanceof Serializable))&#123;</div><div class="line">			throw new IllegalArgumentException(getClass().getSimpleName() + " requires a Serializable payload " +</div><div class="line">					"but received an object of type [" + source.getClass().getName() + "]");</div><div class="line">		&#125;</div><div class="line">		ObjectOutputStream objops = new ObjectOutputStream(target);</div><div class="line">		objops.writeObject(source);</div><div class="line">		objops.flush();</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="序列化ID"><a href="#序列化ID" class="headerlink" title="序列化ID"></a>序列化ID</h3><p>序列化 ID 在 Eclipse 下提供了两种生成策略，一个是固定的 1L，一个是随机生成一个不重复的 long 类型数据（实际上是使用 JDK 工具生成），在这里有一个建议，如果没有特殊需求，就是用默认的 1L 就可以，这样可以确保代码一致时反序列化成功。这也可能是造成序列化和反序列化失败的原因，因为不同的序列化id之间不能进行序列化和反序列化。</p>
+<h3 id="序列化前和序列化后的对象的关系"><a href="#序列化前和序列化后的对象的关系" class="headerlink" title="序列化前和序列化后的对象的关系"></a>序列化前和序列化后的对象的关系</h3><p>是 “==”还是equal？ or 是浅复制还是深复制？<br>答案：深复制，反序列化还原后的对象地址与原来的的地址不同</p>
+<p>序列化前后对象的地址不同了，但是内容是一样的，而且对象中包含的引用也相同。换句话说，通过序列化操作,我们可以实现对任何可Serializable对象的”深度复制（deep copy）”——这意味着我们复制的是整个对象网，而不仅仅是基本对象及其引用。对于同一流的对象，他们的地址是相同，说明他们是同一个对象，但是与其他流的对象地址却不相同。也就说，只要将对象序列化到单一流中，就可以恢复出与我们写出时一样的对象网，而且只要在同一流中，对象都是同一个。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>a）当一个父类实现序列化，子类自动实现序列化，不需要显式实现Serializable接口；<br>b）当一个对象的实例变量引用其他对象，序列化该对象时也把引用对象进行序列化；<br>c） static,transient后的变量不能被序列化；</p>
 
         
         </div>
         <footer class="article-footer">
+            
+                <div class="support-author">
+    <p class="support-talk" >如您觉得文章不错，对您有所帮助，可以通过“支付宝”或“微信支付”请我喝咖啡</p>
+    <div name="dashmain" id="dash-main-id-878e3a" class="dash-main-2 878e3a-2"></div>
+</div>
             
             <div class="share-container">
 
@@ -281,13 +304,32 @@
 
             
     
-        <a href="https://daisyhao.github.io/about/index.html#comments" class="article-comment-link ds-thread-count" data-thread-key="https://daisyhao.github.io/about/index.html">评论</a>
+        <a href="https://daisyhao.github.io/2016/12/26/java-序列化与反序列化/#comments" class="article-comment-link ds-thread-count" data-thread-key="https://daisyhao.github.io/2016/12/26/java-序列化与反序列化/">评论</a>
     
 
         </footer>
     </div>
     
         
+<nav id="article-nav">
+    
+        <a href="/2016/12/27/SpringBoot-redis支持/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    SpringBoot redis支持
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2016/12/20/SpringBoot-静态资源配置/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">SpringBoot 静态资源配置</div>
+        </a>
+    
+</nav>
+
 
     
 </article>
@@ -297,7 +339,7 @@
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="about/index.html" data-title="陈志豪" data-url="https://daisyhao.github.io/about/index.html"></div>
+    <div class="ds-thread" data-thread-key="2016/12/26/java-序列化与反序列化/" data-title="java 序列化与反序列化" data-url="https://daisyhao.github.io/2016/12/26/java-序列化与反序列化/"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;

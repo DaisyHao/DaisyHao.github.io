@@ -3,30 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>陈志豪 | Johnny.z.h.Chen — blog</title>
+    <title>SpringBoot redis支持 | Johnny.z.h.Chen — blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="一个穿着白大褂，左手拿听筒，右手拿鼠标的程序员
-笔者毕业于广西医科大学。是一个热爱技术、热爱生活的医学程序员，目前就职于汇丰银行，从事于Java Web 的开发，以及少许的前端开发。现阶段主要研究SpringCloud套件以及系统架构相关技术
-
-一个热爱生活、热爱大自然的程序猿
-笔者是一只很幸运的猿。很早就被驯化，所以在猿的道路上并没有走多远。她的出现，改变了我猿的一切  ———— 计算机与陈程">
-<meta property="og:type" content="website">
-<meta property="og:title" content="陈志豪">
-<meta property="og:url" content="https://daisyhao.github.io/about/index.html">
+    <meta name="description" content="Spring Boot中除了对常用的关系型数据库提供了优秀的自动化支持之外，对于很多NoSQL数据库一样提供了自动化配置的支持，包括：Redis, MongoDB, Elasticsearch, Solr和Cassandra。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot redis支持">
+<meta property="og:url" content="https://daisyhao.github.io/2016/12/27/SpringBoot-redis支持/index.html">
 <meta property="og:site_name" content="Johnny.z.h.Chen — blog">
-<meta property="og:description" content="一个穿着白大褂，左手拿听筒，右手拿鼠标的程序员
-笔者毕业于广西医科大学。是一个热爱技术、热爱生活的医学程序员，目前就职于汇丰银行，从事于Java Web 的开发，以及少许的前端开发。现阶段主要研究SpringCloud套件以及系统架构相关技术
-
-一个热爱生活、热爱大自然的程序猿
-笔者是一只很幸运的猿。很早就被驯化，所以在猿的道路上并没有走多远。她的出现，改变了我猿的一切  ———— 计算机与陈程">
-<meta property="og:updated_time" content="2016-12-25T07:10:54.116Z">
+<meta property="og:description" content="Spring Boot中除了对常用的关系型数据库提供了优秀的自动化支持之外，对于很多NoSQL数据库一样提供了自动化配置的支持，包括：Redis, MongoDB, Elasticsearch, Solr和Cassandra。">
+<meta property="og:image" content="https://daisyhao.github.io/gallery/redis.png">
+<meta property="og:updated_time" content="2016-12-26T16:30:02.467Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="陈志豪">
-<meta name="twitter:description" content="一个穿着白大褂，左手拿听筒，右手拿鼠标的程序员
-笔者毕业于广西医科大学。是一个热爱技术、热爱生活的医学程序员，目前就职于汇丰银行，从事于Java Web 的开发，以及少许的前端开发。现阶段主要研究SpringCloud套件以及系统架构相关技术
-
-一个热爱生活、热爱大自然的程序猿
-笔者是一只很幸运的猿。很早就被驯化，所以在猿的道路上并没有走多远。她的出现，改变了我猿的一切  ———— 计算机与陈程">
+<meta name="twitter:title" content="SpringBoot redis支持">
+<meta name="twitter:description" content="Spring Boot中除了对常用的关系型数据库提供了优秀的自动化支持之外，对于很多NoSQL数据库一样提供了自动化配置的支持，包括：Redis, MongoDB, Elasticsearch, Solr和Cassandra。">
+<meta name="twitter:image" content="https://daisyhao.github.io/gallery/redis.png">
     
 
     
@@ -192,7 +182,7 @@
 </aside>
 
             
-            <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-SpringBoot-redis支持" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -200,10 +190,29 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            陈志豪
+            SpringBoot redis支持
         </h1>
     
 
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/12/27/SpringBoot-redis支持/">
+            <time datetime="2016-12-26T16:02:20.000Z" itemprop="datePublished">2016-12-27</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Redis/">Redis</a>, <a class="tag-link" href="/tags/SpringBoot/">SpringBoot</a>, <a class="tag-link" href="/tags/multi-database/">multi database</a>
+    </div>
+
+                    </div>
                 
             </header>
         
@@ -211,16 +220,27 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <blockquote>
-<h3 id="一个穿着白大褂，左手拿听筒，右手拿鼠标的程序员"><a href="#一个穿着白大褂，左手拿听筒，右手拿鼠标的程序员" class="headerlink" title="一个穿着白大褂，左手拿听筒，右手拿鼠标的程序员"></a>一个穿着白大褂，左手拿听筒，右手拿鼠标的程序员</h3></blockquote>
-<p>笔者毕业于广西医科大学。是一个热爱技术、热爱生活的医学程序员，目前就职于汇丰银行，从事于Java Web 的开发，以及少许的前端开发。现阶段主要研究SpringCloud套件以及系统架构相关技术</p>
-<blockquote>
-<h3 id="一个热爱生活、热爱大自然的程序猿"><a href="#一个热爱生活、热爱大自然的程序猿" class="headerlink" title="一个热爱生活、热爱大自然的程序猿"></a>一个热爱生活、热爱大自然的程序猿</h3></blockquote>
-<p>笔者是一只很幸运的猿。很早就被驯化，所以在猿的道路上并没有走多远。她的出现，改变了我猿的一切  ———— 计算机与陈程序猿</p>
+            <p>Spring Boot中除了对常用的关系型数据库提供了优秀的自动化支持之外，对于很多NoSQL数据库一样提供了自动化配置的支持，包括：Redis, MongoDB, Elasticsearch, Solr和Cassandra。<br><a id="more"></a></p>
+<h3 id="引入依赖"><a href="#引入依赖" class="headerlink" title="引入依赖"></a>引入依赖</h3><p>Spring Boot提供的数据访问框架Spring Data Redis基于Jedis。可以通过引入spring-boot-starter-redis来配置依赖关系。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">    &lt;groupId&gt;org<span class="selector-class">.springframework</span><span class="selector-class">.boot</span>&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;spring-boot-starter-redis&lt;/artifactId&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="参数配置"><a href="#参数配置" class="headerlink" title="参数配置"></a>参数配置</h3><p>按照惯例在application.properties中加入Redis服务端的相关配置，具体说明如下 (参考类：JedisConnectionFactory)<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"># REDIS (RedisProperties)</div><div class="line"># Redis数据库索引（默认为0）</div><div class="line">spring.redis.database=0</div><div class="line"># Redis服务器地址</div><div class="line">spring.redis.host=localhost</div><div class="line"># Redis服务器连接端口</div><div class="line">spring.redis.port=6379</div><div class="line"># Redis服务器连接密码（默认为空）</div><div class="line">spring.redis.password=</div><div class="line"># 连接池最大连接数（使用负值表示没有限制）</div><div class="line">spring.redis.pool.max-active=8</div><div class="line"># 连接池最大阻塞等待时间（使用负值表示没有限制）</div><div class="line">spring.redis.pool.max-wait=-1</div><div class="line"># 连接池中的最大空闲连接</div><div class="line">spring.redis.pool.max-idle=8</div><div class="line"># 连接池中的最小空闲连接</div><div class="line">spring.redis.pool.min-idle=0</div><div class="line"># 连接超时时间（毫秒）</div><div class="line">spring.redis.timeout=0</div></pre></td></tr></table></figure></p>
+<p>其中spring.redis.database的配置通常使用0即可，Redis在配置的时候可以设置数据库数量，默认为16，可以理解为数据库的schema</p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@RunWith(SpringJUnit4ClassRunner.class)</div><div class="line">@ContextConfiguration(classes=ApplicationStart.class)</div><div class="line">public class RedisTest &#123;</div><div class="line">	</div><div class="line">	@Autowired</div><div class="line">	private StringRedisTemplate stringRedisTemplate;</div><div class="line">	</div><div class="line">	@Test</div><div class="line">	public void testRedis()&#123;</div><div class="line">		stringRedisTemplate.opsForValue().set("uname", "johnny");</div><div class="line">		Assert.assertEquals("johnny", stringRedisTemplate.opsForValue().get("uname"));</div><div class="line">	&#125;</div><div class="line">    </div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="多数据源（可选）"><a href="#多数据源（可选）" class="headerlink" title="多数据源（可选）"></a>多数据源（可选）</h3><p>a) 准备数据源信息</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">spring<span class="selector-class">.redis</span><span class="selector-class">.primary</span><span class="selector-class">.database</span>=<span class="number">0</span></div><div class="line">spring<span class="selector-class">.redis</span><span class="selector-class">.primary</span><span class="selector-class">.host</span>=localhost</div><div class="line">spring<span class="selector-class">.redis</span><span class="selector-class">.primary</span><span class="selector-class">.port</span>=<span class="number">6379</span></div><div class="line">spring<span class="selector-class">.redis</span><span class="selector-class">.primary</span><span class="selector-class">.password</span>=</div><div class="line">spring<span class="selector-class">.redis</span><span class="selector-class">.primary</span><span class="selector-class">.pool</span><span class="selector-class">.max-active</span>=<span class="number">8</span></div><div class="line">spring<span class="selector-class">.redis</span><span class="selector-class">.primary</span><span class="selector-class">.pool</span><span class="selector-class">.max-wait</span>=-<span class="number">1</span></div><div class="line">spring<span class="selector-class">.redis</span><span class="selector-class">.primary</span><span class="selector-class">.pool</span><span class="selector-class">.max-idle</span>=<span class="number">8</span></div><div class="line">spring<span class="selector-class">.redis</span><span class="selector-class">.primary</span><span class="selector-class">.pool</span><span class="selector-class">.min-idle</span>=<span class="number">0</span></div><div class="line">spring<span class="selector-class">.redis</span><span class="selector-class">.primary</span><span class="selector-class">.timeout</span>=<span class="number">0</span></div></pre></td></tr></table></figure>
+<p>b) 配置 RedisConnectionFactory (RedisConnectionFactory是一个接口，Spring-data-redis 已经为我们提供了几个实现类)<br><img src="/gallery/article/RedisConnectFactory-relationship.png" alt="RedisConnectionFactory-relationship"></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* @ClassName: RedisConfiguration </div><div class="line">* @Description: 配置 RedisConnectionFactory ，供不同他template来使用</div><div class="line">* @author Johnny </div><div class="line">* @date 2016年12月26日 下午11:55:50 </div><div class="line"> */</div><div class="line">@Configuration</div><div class="line">public class RedisConnectionFactoryConfiguration &#123;</div><div class="line">	</div><div class="line">	@Bean(name="PrimaryRedisConnectionFactory")</div><div class="line">	@Qualifier("PrimaryRedisConnectionFactory")</div><div class="line">	@ConfigurationProperties(prefix="spring.redis.primary")</div><div class="line">	public RedisConnectionFactory primaryRedisConnectionFactory()&#123;</div><div class="line">		return new JedisConnectionFactory();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>c) 配置StringRedisTemplate 或者别的Template，注入前面配置的RedisConnectionFactory</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* @ClassName: RedisConfiguration </div><div class="line">* @Description: 配置 RedisTemplateConfiguration</div><div class="line">* @author Johnny </div><div class="line">* @date 2016年12月26日 下午11:55:50 </div><div class="line"> */</div><div class="line">@Configuration</div><div class="line">public class RedisTemplateConfiguration &#123;</div><div class="line">	</div><div class="line">	@Autowired</div><div class="line">	@Qualifier("PrimaryRedisConnectionFactory")</div><div class="line">	private RedisConnectionFactory  factory;</div><div class="line"></div><div class="line">	@Bean(name="PrimaryStringRedisTemplate")</div><div class="line">	@Qualifier("PrimaryStringRedisTemplate")</div><div class="line">	public StringRedisTemplate primaryStringRedisTemplate()&#123;</div><div class="line">		return new StringRedisTemplate(factory);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="测试-1"><a href="#测试-1" class="headerlink" title="测试"></a>测试</h3><p>根据自己的需求来注入不同的Template来操作redis<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">@Autowired</div><div class="line">@Qualifier("PrimaryStringRedisTemplate")</div><div class="line">private StringRedisTemplate stringRedisTemplate;</div><div class="line"></div><div class="line">@Test</div><div class="line">public void testRedis()&#123;</div><div class="line">	stringRedisTemplate.opsForValue().set("uname", "johnny");</div><div class="line">	Assert.assertEquals("johnny", stringRedisTemplate.opsForValue().get("uname"));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
         
         </div>
         <footer class="article-footer">
+            
+                <div class="support-author">
+    <p class="support-talk" >如您觉得文章不错，对您有所帮助，可以通过“支付宝”或“微信支付”请我喝咖啡</p>
+    <div name="dashmain" id="dash-main-id-878e3a" class="dash-main-2 878e3a-2"></div>
+</div>
             
             <div class="share-container">
 
@@ -281,13 +301,23 @@
 
             
     
-        <a href="https://daisyhao.github.io/about/index.html#comments" class="article-comment-link ds-thread-count" data-thread-key="https://daisyhao.github.io/about/index.html">评论</a>
+        <a href="https://daisyhao.github.io/2016/12/27/SpringBoot-redis支持/#comments" class="article-comment-link ds-thread-count" data-thread-key="https://daisyhao.github.io/2016/12/27/SpringBoot-redis支持/">评论</a>
     
 
         </footer>
     </div>
     
         
+<nav id="article-nav">
+    
+    
+        <a href="/2016/12/26/java-序列化与反序列化/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">java 序列化与反序列化</div>
+        </a>
+    
+</nav>
+
 
     
 </article>
@@ -297,7 +327,7 @@
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="about/index.html" data-title="陈志豪" data-url="https://daisyhao.github.io/about/index.html"></div>
+    <div class="ds-thread" data-thread-key="2016/12/27/SpringBoot-redis支持/" data-title="SpringBoot redis支持" data-url="https://daisyhao.github.io/2016/12/27/SpringBoot-redis支持/"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;

@@ -142,11 +142,11 @@
         <!--
             <div class="article-info profile-block">
                 <div class="article-info-block">
-                    2
+                    4
                     <span>文章</span>
                 </div>
                 <div class="article-info-block">
-                    3
+                    6
                     <span>标签</span>
                 </div>
             </div>
@@ -180,6 +180,243 @@
 
             
             <section id="main">
+    <article id="post-SpringBoot-redis支持" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/12/27/SpringBoot-redis支持/">SpringBoot redis支持</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/12/27/SpringBoot-redis支持/">
+            <time datetime="2016-12-26T16:02:20.000Z" itemprop="datePublished">2016-12-27</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Redis/">Redis</a>, <a class="tag-link" href="/tags/SpringBoot/">SpringBoot</a>, <a class="tag-link" href="/tags/multi-database/">multi database</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>Spring Boot中除了对常用的关系型数据库提供了优秀的自动化支持之外，对于很多NoSQL数据库一样提供了自动化配置的支持，包括：Redis, MongoDB, Elasticsearch, Solr和Cassandra。<br></p>
+            <p class="article-more-link">
+                <a href="/2016/12/27/SpringBoot-redis支持/#more">查看更多</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            
+            <div class="share-container">
+
+    <div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone">QQ空间</a>
+    <a class="jiathis_button_tsina">新浪微博</a>
+    <a class="jiathis_button_tqq">腾讯微博</a>
+    <a class="jiathis_button_weixin">微信</a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+    <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<style>
+    .jiathis_style div:first-child:not(.jiadiv_01) {
+        width: auto !important;
+        border: none !important;
+    }
+    .jiathis_style .jiadiv_01 {
+        margin: 10px 0;
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .jiathis_style .jiadiv_01 div:first-child {
+        display: none;
+    }
+    .jiathis_style .jiadiv_02 {
+        padding: 7px 0 !important;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle {
+        width: 85px;
+        border: none;
+        height: auto;
+        margin: 3px 10px;
+        padding: 6px 10px;
+        border-radius: 4px;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:hover {
+        border: none;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:nth-child(even) {
+        margin-left: 0;
+    }
+    .jiathis_style .jtico:hover {
+        opacity: 1;
+    }
+    .jiathis_style .ckepopBottom,
+    .jiathis_style .centerBottom {
+        width: auto !important;
+        padding: 5px;
+        background: #f7f7f7;
+    }
+</style>
+
+
+
+</div>
+
+            
+    
+        <a href="https://daisyhao.github.io/2016/12/27/SpringBoot-redis支持/#comments" class="article-comment-link ds-thread-count" data-thread-key="https://daisyhao.github.io/2016/12/27/SpringBoot-redis支持/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+
+
+    <article id="post-java-序列化与反序列化" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/12/26/java-序列化与反序列化/">java 序列化与反序列化</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/12/26/java-序列化与反序列化/">
+            <time datetime="2016-12-26T14:55:00.000Z" itemprop="datePublished">2016-12-26</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Java-杂烩/">Java 杂烩</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/serialize/">serialize</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>Serialization简单说就是为了保存在内存中的各种对象的状态（也就是实例变量，不是方法），并且可以把保存的对象状态再读出来。虽然你可以用你自己的各种各样的方法来保存object states，但是Java给你提供一种应该比你自己好的保存对象状态的机制，那就是序列化。<br></p>
+            <p class="article-more-link">
+                <a href="/2016/12/26/java-序列化与反序列化/#more">查看更多</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            
+            <div class="share-container">
+
+    <div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone">QQ空间</a>
+    <a class="jiathis_button_tsina">新浪微博</a>
+    <a class="jiathis_button_tqq">腾讯微博</a>
+    <a class="jiathis_button_weixin">微信</a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+    <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<style>
+    .jiathis_style div:first-child:not(.jiadiv_01) {
+        width: auto !important;
+        border: none !important;
+    }
+    .jiathis_style .jiadiv_01 {
+        margin: 10px 0;
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .jiathis_style .jiadiv_01 div:first-child {
+        display: none;
+    }
+    .jiathis_style .jiadiv_02 {
+        padding: 7px 0 !important;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle {
+        width: 85px;
+        border: none;
+        height: auto;
+        margin: 3px 10px;
+        padding: 6px 10px;
+        border-radius: 4px;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:hover {
+        border: none;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:nth-child(even) {
+        margin-left: 0;
+    }
+    .jiathis_style .jtico:hover {
+        opacity: 1;
+    }
+    .jiathis_style .ckepopBottom,
+    .jiathis_style .centerBottom {
+        width: auto !important;
+        padding: 5px;
+        background: #f7f7f7;
+    }
+</style>
+
+
+
+</div>
+
+            
+    
+        <a href="https://daisyhao.github.io/2016/12/26/java-序列化与反序列化/#comments" class="article-comment-link ds-thread-count" data-thread-key="https://daisyhao.github.io/2016/12/26/java-序列化与反序列化/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+
+
     <article id="post-SpringBoot-静态资源配置" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -436,6 +673,44 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2016/12/27/SpringBoot-redis支持/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/redis.png)" alt="SpringBoot redis支持" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/12/27/SpringBoot-redis支持/" class="title">SpringBoot redis支持</a></p>
+                            <p class="item-date"><time datetime="2016-12-26T16:02:20.000Z" itemprop="datePublished">2016-12-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/26/java-序列化与反序列化/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/java.jpg)" alt="java 序列化与反序列化" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java-杂烩/">Java 杂烩</a></p>
+                            <p class="item-title"><a href="/2016/12/26/java-序列化与反序列化/" class="title">java 序列化与反序列化</a></p>
+                            <p class="item-date"><time datetime="2016-12-26T14:55:00.000Z" itemprop="datePublished">2016-12-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2016/12/20/SpringBoot-静态资源配置/" class="thumbnail">
     
     
@@ -480,7 +755,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/SpringBoot/">SpringBoot</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-杂烩/">Java 杂烩</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SpringBoot/">SpringBoot</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -489,7 +764,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Resouce/" style="font-size: 10px;">Resouce</a> <a href="/tags/SpringBoot/" style="font-size: 20px;">SpringBoot</a>
+            <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Resouce/" style="font-size: 10px;">Resouce</a> <a href="/tags/SpringBoot/" style="font-size: 20px;">SpringBoot</a> <a href="/tags/multi-database/" style="font-size: 10px;">multi database</a> <a href="/tags/serialize/" style="font-size: 10px;">serialize</a>
         </div>
     </div>
 
