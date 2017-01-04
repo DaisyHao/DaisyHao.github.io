@@ -3,17 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>标签: Resouce | Johnny.z.h.Chen — blog</title>
+    <title>SpringBoot-Web应用异常的统一处理 | Johnny.z.h.Chen — blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Money spent on the brain is never spent in vain">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Johnny.z.h.Chen — blog">
-<meta property="og:url" content="https://daisyhao.github.io/tags/Resouce/index.html">
+    <meta name="description" content="Spring Boot provides an /error mapping by default that handles all errors in a sensible way, and it is registered as a ‘global’ error page in the servlet container. For machine clients it will produc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot-Web应用异常的统一处理">
+<meta property="og:url" content="https://daisyhao.github.io/2017/01/03/SpringBoot-Web应用异常的统一处理/index.html">
 <meta property="og:site_name" content="Johnny.z.h.Chen — blog">
-<meta property="og:description" content="Money spent on the brain is never spent in vain">
+<meta property="og:description" content="Spring Boot provides an /error mapping by default that handles all errors in a sensible way, and it is registered as a ‘global’ error page in the servlet container. For machine clients it will produc">
+<meta property="og:image" content="https://daisyhao.github.io/gallery/springboot.png">
+<meta property="og:updated_time" content="2017-01-04T16:58:30.365Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Johnny.z.h.Chen — blog">
-<meta name="twitter:description" content="Money spent on the brain is never spent in vain">
+<meta name="twitter:title" content="SpringBoot-Web应用异常的统一处理">
+<meta name="twitter:description" content="Spring Boot provides an /error mapping by default that handles all errors in a sensible way, and it is registered as a ‘global’ error page in the servlet container. For machine clients it will produc">
+<meta name="twitter:image" content="https://daisyhao.github.io/gallery/springboot.png">
     
 
     
@@ -179,50 +182,202 @@
 </aside>
 
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-tag"></i></span>
-        <h1 class="title">#Resouce</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-SpringBoot-Web应用异常的统一处理" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/12/20/SpringBoot-静态资源配置/">SpringBoot 静态资源配置</a>
+        <h1 class="article-title" itemprop="name">
+            SpringBoot-Web应用异常的统一处理
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/12/20/SpringBoot-静态资源配置/">
-            <time datetime="2016-12-20T04:43:18.000Z" itemprop="datePublished">2016-12-20</time>
+        <a href="/2017/01/03/SpringBoot-Web应用异常的统一处理/">
+            <time datetime="2017-01-02T17:01:11.000Z" itemprop="datePublished">2017-01-03</time>
         </a>
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
         <a class="article-category-link" href="/categories/SpringBoot/">SpringBoot</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Resouce/">Resouce</a>, <a class="tag-link" href="/tags/SpringBoot/">SpringBoot</a>
+        <a class="tag-link" href="/tags/Exception/">Exception</a>, <a class="tag-link" href="/tags/SpringBoot/">SpringBoot</a>
     </div>
 
-                </div>
-            </div>
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <blockquote>
+<p><em>Spring Boot provides an /error mapping by default that handles all errors in a sensible way, and it is registered as a ‘global’ error page in the servlet container. For machine clients it will produce a JSON response with details of the error, the HTTP status and the exception message.</em></p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Error-Handling"><a href="#Error-Handling" class="headerlink" title="Error Handling"></a>Error Handling</h2><p>Spring Boot provides an /error mapping by default that handles all errors in a sensible way, and it is registered as a ‘global’ error page in the servlet container. For machine clients it will produce a JSON response with details of the error, the HTTP status and the exception message.</p>
+<h3 id="BasicErrorController"><a href="#BasicErrorController" class="headerlink" title="BasicErrorController"></a>BasicErrorController</h3><p>The BasicErrorController can be used as a base class for a custom ErrorController. This is particularly useful if you want to add a handler for a new content type (the default is to handle text/html specifically and provide a fallback for everything else). To do that just extend BasicErrorController and add a public method with a @RequestMapping that has a produces attribute, and create a bean of your new type.</p>
+<h3 id="ControllerAdvice"><a href="#ControllerAdvice" class="headerlink" title="@ControllerAdvice"></a>@ControllerAdvice</h3><p>If you want to custom the exception fro various package or various type of exception, you can use the annotation @ControllerAdvice<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">@ControllerAdvice(xxx)</div><div class="line">public class GlobalExceptionHanller &#123;</div><div class="line">	</div><div class="line">	public static final String DEFAULT_ERROR_VIEW = "error";</div><div class="line">	</div><div class="line">    @ExceptionHandler(value = Exception.class)</div><div class="line">    public ModelAndView exceptionHandle(</div><div class="line">    		HttpServletRequest req, Exception e) throws Exception &#123;</div><div class="line">        ModelAndView mav = new ModelAndView();</div><div class="line">        mav.addObject("exception", e);</div><div class="line">        mav.addObject("url", req.getRequestURL());</div><div class="line">        mav.setViewName(DEFAULT_ERROR_VIEW);</div><div class="line">        return mav;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    @ExceptionHandler(value = ControllerException.class)</div><div class="line">    @ResponseBody</div><div class="line">    public ExceptionInfo&lt;String&gt; myExceptionHandle(</div><div class="line">    		HttpServletRequest request,ControllerException e)&#123;</div><div class="line">    	ExceptionInfo&lt;String&gt; exceptionInfo = new ExceptionInfo&lt;String&gt;();</div><div class="line">    	exceptionInfo.setMessage(e.getMessage());</div><div class="line">    	exceptionInfo.setCode(ExceptionInfo.ERROR);</div><div class="line">    	exceptionInfo.setData("Some Data");</div><div class="line">    	exceptionInfo.setUrl(request.getRequestURL().toString());</div><div class="line">    	return exceptionInfo;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<h3 id="Custom-error-pages"><a href="#Custom-error-pages" class="headerlink" title="Custom error pages"></a>Custom error pages</h3><p>If you want to display a custom HTML error page for a given status code, you add a file to an /error folder. Error pages can either be static HTML (i.e. added under any of the static resource folders) or built using templates. The name of the file should be the exact status code or a series mask.</p>
+<p>For example, to map 404 to a static HTML file, your folder structure would look like this:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">src/</div><div class="line"> +- main/</div><div class="line">     +- java/</div><div class="line">     |   + &lt;source code&gt;</div><div class="line">     +- resources/</div><div class="line">         +- public/</div><div class="line">             +- error/</div><div class="line">             |   +- 404.html</div><div class="line">             +- &lt;other public assets&gt;</div></pre></td></tr></table></figure>
+<p>To map all 5xx errors using a FreeMarker template, you’d have a structure like this:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">src/</div><div class="line"> +- main/</div><div class="line">     +- java/</div><div class="line">     |   + &lt;source code&gt;</div><div class="line">     +- resources/</div><div class="line">         +- templates/</div><div class="line">             +- error/</div><div class="line">             |   +- 5xx.ftl</div><div class="line">             +- &lt;other templates&gt;</div></pre></td></tr></table></figure>
+<p>For more complex mappings you can also add beans that implement the ErrorViewResolver interface.（you can see the DefaultErrorViewResolver Class to get the more details）</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public class MyErrorViewResolver implements ErrorViewResolver &#123;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public ModelAndView resolveErrorView(HttpServletRequest request,</div><div class="line">            HttpStatus status, Map&lt;String, Object&gt; model) &#123;</div><div class="line">        <span class="comment">// Use the request or status to optionally return a ModelAndView</span></div><div class="line">        return ...</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+        
         </div>
-    
+        <footer class="article-footer">
+            
+                <div class="support-author">
+    <p class="support-talk" >如您觉得文章不错，对您有所帮助，可以通过“支付宝”或“微信支付”请我喝咖啡</p>
+    <div name="dashmain" id="dash-main-id-878e3a" class="dash-main-2 878e3a-2"></div>
 </div>
+            
+            <div class="share-container">
+
+    <div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone">QQ空间</a>
+    <a class="jiathis_button_tsina">新浪微博</a>
+    <a class="jiathis_button_tqq">腾讯微博</a>
+    <a class="jiathis_button_weixin">微信</a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+    <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<style>
+    .jiathis_style div:first-child:not(.jiadiv_01) {
+        width: auto !important;
+        border: none !important;
+    }
+    .jiathis_style .jiadiv_01 {
+        margin: 10px 0;
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .jiathis_style .jiadiv_01 div:first-child {
+        display: none;
+    }
+    .jiathis_style .jiadiv_02 {
+        padding: 7px 0 !important;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle {
+        width: 85px;
+        border: none;
+        height: auto;
+        margin: 3px 10px;
+        padding: 6px 10px;
+        border-radius: 4px;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:hover {
+        border: none;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:nth-child(even) {
+        margin-left: 0;
+    }
+    .jiathis_style .jtico:hover {
+        opacity: 1;
+    }
+    .jiathis_style .ckepopBottom,
+    .jiathis_style .centerBottom {
+        width: auto !important;
+        padding: 5px;
+        background: #f7f7f7;
+    }
+</style>
+
+
+
+</div>
+
+            
+    
+        <a href="https://daisyhao.github.io/2017/01/03/SpringBoot-Web应用异常的统一处理/#comments" class="article-comment-link ds-thread-count" data-thread-key="https://daisyhao.github.io/2017/01/03/SpringBoot-Web应用异常的统一处理/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/12/27/SpringBoot-redis支持/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">SpringBoot redis支持</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div class="ds-thread" data-thread-key="2017/01/03/SpringBoot-Web应用异常的统一处理/" data-title="SpringBoot-Web应用异常的统一处理" data-url="https://daisyhao.github.io/2017/01/03/SpringBoot-Web应用异常的统一处理/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+    
+    </section>
+
+
+
 </section>
             
                 <aside id="sidebar">
